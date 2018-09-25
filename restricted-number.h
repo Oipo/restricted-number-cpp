@@ -161,5 +161,6 @@ struct restricted_number {
 
     friend std::ostream& operator<<(std::ostream& os, const restricted_number<T>& rn) {
         os << "(" << rn.minimum << ", " << rn.maximum << ", " << rn.current << ")";
+        return os;
     }
 };
