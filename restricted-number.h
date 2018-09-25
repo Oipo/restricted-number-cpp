@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <type_traits>
 #include <cmath>
+#include <ostream>
 
 template <class T>
 struct restricted_number {
@@ -156,5 +157,9 @@ struct restricted_number {
     restricted_number& operator=(const T& other) {
         set(other);
         return *this;
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const restricted_number<T>& rn) {
+        os << "(" << rn.minimum << ", " << rn.maximum << ", " << rn.current << ")";
     }
 };
