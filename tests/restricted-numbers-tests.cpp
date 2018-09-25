@@ -237,3 +237,83 @@ TEST_CASE("Complex float value mutators should all work correctly") {
     REQUIRE(RN2.sub_under_minimum(10)->current == 40);
     REQUIRE(RN2.minimum == -10);
 }
+
+TEST_CASE("+= operator overloads work") {
+    restricted_number<int> num(0, 100, 50);
+
+    num += 10;
+
+    REQUIRE(num.current == 60);
+
+    num += 100;
+
+    REQUIRE(num.current == 100);
+
+    restricted_number<float> numf(0, 100, 50);
+
+    numf += 10.5;
+
+    REQUIRE(numf.current == 60.5f);
+
+    numf += 100;
+
+    REQUIRE(numf.current == 100);
+}
+
+TEST_CASE("-= operator overloads work") {
+    restricted_number<int> num(0, 100, 50);
+
+    num -= 10;
+
+    REQUIRE(num.current == 40);
+
+    num -= 100;
+
+    REQUIRE(num.current == 0);
+
+    restricted_number<float> numf(0, 100, 50);
+
+    numf -= 10.5;
+
+    REQUIRE(numf.current == 39.5f);
+
+    numf -= 100;
+
+    REQUIRE(numf.current == 0);
+}
+
+TEST_CASE("/= operator overloads work") {
+    restricted_number<int> num(0, 100, 50);
+
+    num /= 10;
+
+    REQUIRE(num.current == 5);
+
+    restricted_number<float> numf(0, 100, 50);
+
+    numf /= 10;
+
+    REQUIRE(numf.current == 5);
+}
+
+TEST_CASE("*= operator overloads work") {
+    restricted_number<int> num(0, 100, 20);
+
+    num *= 2;
+
+    REQUIRE(num.current == 40);
+
+    num *= 10;
+
+    REQUIRE(num.current == 100);
+
+    restricted_number<float> numf(0, 100, 20.5);
+
+    numf *= 2;
+
+    REQUIRE(numf.current == 41.f);
+
+    numf *= 10;
+
+    REQUIRE(numf.current == 100);
+}

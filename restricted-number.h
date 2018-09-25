@@ -118,4 +118,37 @@ struct restricted_number {
         return as_percent() <= perc;
     }
 
+    // operators
+
+    void operator+=(const T& other) {
+        add(other);
+    }
+
+    void operator-=(const T& other) {
+        sub(other);
+    }
+
+    void operator/=(const T& other) {
+        set(current/other);
+    }
+
+    void operator*=(const T& other) {
+        set(current*other);
+    }
+
+    bool operator>(const T& other) {
+        return gt(other);
+    }
+
+    bool operator>=(const T& other) {
+        return gte(other);
+    }
+
+    bool operator<(const T& other) {
+        return lt(other);
+    }
+
+    bool operator<=(const T& other) {
+        return lte(other);
+    }
 };
