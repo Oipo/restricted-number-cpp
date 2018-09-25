@@ -3,6 +3,7 @@
 #include <cassert>
 #include <algorithm>
 #include <type_traits>
+#include <cmath>
 
 template <class T>
 struct restricted_number {
