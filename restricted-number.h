@@ -152,4 +152,9 @@ struct restricted_number {
     bool operator<=(const T& other) {
         return lte(other);
     }
+
+    restricted_number& operator=(const T& other) {
+        set(other);
+        return *this;
+    }
 };
