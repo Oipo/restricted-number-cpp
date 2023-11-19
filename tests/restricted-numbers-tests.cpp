@@ -1,19 +1,9 @@
 #define CATCH_CONFIG_RUNNER
 
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include "../restricted-number.h"
 
 using namespace std;
-
-int main(int argc, char **argv) {
-    ios::sync_with_stdio(false);
-
-    int result = Catch::Session().run( argc, argv );
-
-    // global clean-up...
-
-    return ( result < 0xff ? result : 0xff );
-}
 
 
 TEST_CASE("constructor") {
