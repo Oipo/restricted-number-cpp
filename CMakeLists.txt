@@ -3,6 +3,7 @@ project(restricted_number_cpp)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE CXX STANDARD REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wconversion -Wno-unused-variable -Wno-long-long -Wno-unused-parameter -Wnull-dereference -pedantic -Wformat -Wformat-security -Wcast-align -Woverloaded-virtual -Wno-sign-conversion ")
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external//Catch2)
 #enable string_view support in catch2
