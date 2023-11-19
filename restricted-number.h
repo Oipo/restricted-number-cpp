@@ -11,7 +11,7 @@ struct restricted_number final {
     T minimum, maximum, current;
 
     restricted_number(T minimum, T maximum, T current) noexcept {
-        assert(minimum < maximum);
+        assert(minimum <= maximum);
 
         this->minimum = minimum;
         this->maximum = maximum;
@@ -20,7 +20,7 @@ struct restricted_number final {
 
 
     restricted_number(T minimum, T maximum) noexcept {
-        assert(minimum < maximum);
+        assert(minimum <= maximum);
 
         this->minimum = minimum;
         this->maximum = maximum;

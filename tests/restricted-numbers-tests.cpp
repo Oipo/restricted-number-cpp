@@ -16,6 +16,11 @@ TEST_CASE("constructor") {
     REQUIRE(numf.minimum == 0);
     REQUIRE(numf.maximum == 100);
     REQUIRE(numf.current == 55);
+
+    restricted_number<int> num2(0, 0, 0);
+    REQUIRE(num2.minimum == 0);
+    REQUIRE(num2.maximum == 0);
+    REQUIRE(num2.current == 0);
 }
 
 TEST_CASE("constructor without current") {
